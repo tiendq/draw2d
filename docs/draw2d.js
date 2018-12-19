@@ -20644,7 +20644,7 @@ _packages2.default.io.json.Reader = _packages2.default.io.Reader.extend({
         var node = null;
         json.forEach(function (element) {
             try {
-                var o = _this.createFigureFromType(element.type);
+                var o = _this.createFigureFromElement(element) || _this.createFigureFromType(element.type);
                 var source = null;
                 var target = null;
                 for (var i in element) {
@@ -20722,6 +20722,17 @@ _packages2.default.io.json.Reader = _packages2.default.io.Reader.extend({
      */
     createFigureFromType: function createFigureFromType(type) {
         return eval("new " + type + "()");
+    },
+
+    /**
+     * @method
+     * Factory method to create an instance of the given element.
+     *
+     * @param {Object} element
+     * @return {draw2d.Figure}
+     */
+    createFigureFromElement: function createFigureFromElement(element) {
+        return null;
     }
 });
 /**

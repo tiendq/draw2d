@@ -1,14 +1,11 @@
 /* global __dirname, require, module*/
-
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ReplaceInFileWebpackPlugin = require('replace-in-file-webpack-plugin');
-
 
 const path = require('path');
 const pkg = require('./package.json');
 
 var FilesToJSON = require('./build/FilesToJSON');
-
 
 let libraryName = pkg.name;
 
@@ -50,9 +47,7 @@ let plugins = [
   }]),
 ], outputFile;
 
-
 outputFile = libraryName + '.js';
-
 
 const config = {
   entry: __dirname + '/src/index.js',
